@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kieva Tarot - Oshun Blessed | West Side Chicago Psychic Medium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Kieva Tarot - Holy Spirit Blessed | West Side Chicago Psychic Medium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pink: #ec4899;
-            --purple: #a855f7;
-            --green: #22c55e;
-            --gold: #FFD700;
-            --dark: #05020a;
-            --glow-pink: rgba(236, 72, 153, 0.7);
-            --glow-purple: rgba(168, 85, 247, 0.7);
-            --glow-green: rgba(34, 197, 94, 0.6);
-            --glow-gold: rgba(255, 215, 0, 0.5);
+            --mystic-pink: #ff1493;
+            --divine-purple: #8b00ff;
+            --celestial-cyan: #00ffff;
+            --holy-gold: #ffd700;
+            --spirit-white: #f0f8ff;
+            --sacred-dark: #0a0015;
+            --ethereal-lavender: #e6ccff;
+            --radiant-magenta: #ff00ff;
+            --glow-mystic: rgba(255, 20, 147, 0.8);
+            --glow-divine: rgba(139, 0, 255, 0.8);
+            --glow-celestial: rgba(0, 255, 255, 0.7);
+            --glow-holy: rgba(255, 215, 0, 0.7);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--dark);
+            background: var(--sacred-dark);
             color: #fff;
             line-height: 1.8;
             overflow-x: hidden;
@@ -29,7 +32,7 @@
             background-attachment: fixed;
             background-position: center;
         }
-        /* Oshun + Mythological Watermarks */
+        /* Divine + Celestial Watermarks */
         body::before {
             content: '';
             position: fixed;
@@ -37,11 +40,11 @@
             width: 100%; height: 100%;
             background: 
                 url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964') center/cover,
-                radial-gradient(circle at 20% 10%, var(--glow-pink) 0%, transparent 20%),
-                radial-gradient(circle at 80% 30%, var(--glow-purple) 0%, transparent 25%),
-                radial-gradient(circle at 40% 90%, var(--glow-green) 0%, transparent 20%);
+                radial-gradient(circle at 20% 10%, var(--glow-mystic) 0%, transparent 20%),
+                radial-gradient(circle at 80% 30%, var(--glow-divine) 0%, transparent 25%),
+                radial-gradient(circle at 40% 90%, var(--glow-celestial) 0%, transparent 20%);
             background-blend-mode: soft-light, overlay;
-            opacity: 0.12;
+            opacity: 0.15;
             z-index: -3;
             mix-blend-mode: screen;
         }
@@ -63,19 +66,24 @@
             filter: blur(0.5px);
         }
         
-        .particle.gold {
-            background: radial-gradient(circle at 30% 30%, #FFE55C, var(--gold));
-            box-shadow: 0 0 20px var(--glow-gold), inset -2px -2px 5px rgba(0,0,0,0.3);
+        .particle.holy {
+            background: radial-gradient(circle at 30% 30%, #FFE55C, var(--holy-gold));
+            box-shadow: 0 0 25px var(--glow-holy), inset -2px -2px 5px rgba(0,0,0,0.3);
         }
         
-        .particle.pink {
-            background: radial-gradient(circle at 30% 30%, #ff69b4, var(--pink));
-            box-shadow: 0 0 15px var(--glow-pink);
+        .particle.mystic {
+            background: radial-gradient(circle at 30% 30%, #ff69b4, var(--mystic-pink));
+            box-shadow: 0 0 20px var(--glow-mystic);
         }
         
-        .particle.purple {
-            background: radial-gradient(circle at 30% 30%, #da70d6, var(--purple));
-            box-shadow: 0 0 15px var(--glow-purple);
+        .particle.divine {
+            background: radial-gradient(circle at 30% 30%, #da70d6, var(--divine-purple));
+            box-shadow: 0 0 20px var(--glow-divine);
+        }
+
+        .particle.celestial {
+            background: radial-gradient(circle at 30% 30%, #00ffff, var(--celestial-cyan));
+            box-shadow: 0 0 20px var(--glow-celestial);
         }
         
         /* Particle Animations */
@@ -109,36 +117,40 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
         
-        /* Header with Oshun Logo */
+        /* Header with Divine Logo */
         header { 
             text-align: center; 
             padding: 80px 20px 60px;
             position: relative;
         }
         
-        .oshun-logo {
+        .divine-logo {
             max-width: 380px;
             margin: 0 auto 10px;
             position: relative;
-            filter: drop-shadow(0 0 35px var(--glow-gold));
+            filter: drop-shadow(0 0 45px var(--glow-holy)) drop-shadow(0 0 25px var(--glow-mystic));
             animation: logo-float 6s ease-in-out infinite;
+            border-radius: 50%;
+            border: 4px solid var(--holy-gold);
+            overflow: hidden;
         }
         
         @keyframes logo-float {
-            0%, 100% { transform: translateY(0px) rotateZ(-1deg); }
-            50% { transform: translateY(-20px) rotateZ(1deg); }
+            0%, 100% { transform: translateY(0px) rotateZ(-1deg) scale(1); }
+            50% { transform: translateY(-20px) rotateZ(1deg) scale(1.02); }
         }
         
-        .oshun-logo img {
+        .divine-logo img {
             width: 100%;
             height: auto;
-            opacity: 0.95;
+            opacity: 0.98;
             transition: opacity 0.3s ease;
+            display: block;
         }
         
-        .oshun-logo img:hover {
+        .divine-logo img:hover {
             opacity: 1;
-            filter: drop-shadow(0 0 50px var(--glow-gold));
+            filter: brightness(1.1) saturate(1.2);
         }
         
         .logo-text {
@@ -149,23 +161,36 @@
             font-family: 'Cinzel Decorative', serif;
             font-size: 2.8rem;
             font-weight: 900;
-            color: var(--dark);
-            text-shadow: 0 0 15px var(--glow-gold), 0 0 30px var(--gold);
+            background: linear-gradient(135deg, var(--holy-gold), var(--radiant-magenta), var(--celestial-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 15px var(--glow-holy), 0 0 30px var(--glow-mystic);
             letter-spacing: 3px;
             animation: text-shimmer 3s infinite;
         }
         
         @keyframes text-shimmer {
-            0%, 100% { text-shadow: 0 0 15px var(--glow-gold), 0 0 30px var(--gold); }
-            50% { text-shadow: 0 0 25px var(--glow-gold), 0 0 45px var(--gold); }
+            0%, 100% { text-shadow: 0 0 15px var(--glow-holy), 0 0 30px var(--glow-mystic); filter: brightness(1); }
+            50% { text-shadow: 0 0 30px var(--glow-holy), 0 0 50px var(--glow-divine); filter: brightness(1.3); }
         }
         
         .tagline { 
-            font-size: 1.5rem; 
-            color: #d8b4fe; 
+            font-size: 1.6rem; 
+            background: linear-gradient(90deg, #ffd700, #ff00ff, #00ffff, #ffd700);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 25px 0 30px;
-            font-weight: 300;
-            animation: fade-in-up 1s ease-out;
+            font-weight: 600;
+            animation: fade-in-up 1s ease-out, gradient-flow 4s ease-in-out infinite;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes gradient-flow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         @keyframes fade-in-up {
@@ -184,8 +209,9 @@
             max-width: 600px;
             margin: 30px auto;
             border-radius: 20px;
-            box-shadow: 0 0 50px var(--glow-purple);
-            border: 2px solid var(--gold);
+            box-shadow: 0 0 60px var(--glow-mystic), 0 0 40px var(--glow-divine), 0 0 30px var(--glow-celestial);
+            border: 3px solid;
+            border-image: linear-gradient(45deg, var(--holy-gold), var(--radiant-magenta), var(--celestial-cyan)) 1;
             animation: crystal-glow 3s ease-in-out infinite;
             object-fit: cover;
             height: 400px;
@@ -193,23 +219,23 @@
         
         @keyframes crystal-glow {
             0%, 100% {
-                box-shadow: 0 0 50px var(--glow-purple), 0 0 80px rgba(168, 85, 247, 0.4);
+                box-shadow: 0 0 50px var(--glow-mystic), 0 0 80px var(--glow-divine), inset 0 0 30px rgba(255, 215, 0, 0.2);
             }
             50% {
-                box-shadow: 0 0 70px var(--glow-gold), 0 0 100px rgba(255, 215, 0, 0.3);
+                box-shadow: 0 0 80px var(--glow-holy), 0 0 100px var(--glow-celestial), inset 0 0 50px rgba(0, 255, 255, 0.15);
             }
         }
 
         /* About Section */
         .about {
-            background: rgba(5, 2, 10, 0.75);
+            background: rgba(10, 0, 21, 0.85);
             border: 2px solid;
-            border-image: linear-gradient(45deg, var(--pink), var(--gold), var(--green)) 1;
+            border-image: linear-gradient(45deg, var(--radiant-magenta), var(--holy-gold), var(--celestial-cyan)) 1;
             border-radius: 25px;
             padding: 50px;
             margin: 60px 0;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 0 40px var(--glow-purple);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 50px var(--glow-divine), inset 0 0 40px rgba(139, 0, 255, 0.1);
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
@@ -220,8 +246,8 @@
         .about-img {
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 0 30px var(--glow-gold);
-            border: 2px solid var(--gold);
+            box-shadow: 0 0 40px var(--glow-mystic), 0 0 25px var(--glow-holy);
+            border: 3px solid var(--holy-gold);
             animation: float 6s ease-in-out infinite;
             position: relative;
         }
@@ -233,15 +259,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(236, 72, 153, 0.05));
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.15), rgba(139, 0, 255, 0.1));
             pointer-events: none;
             z-index: 2;
             animation: shimmer 3s infinite;
-        }
-        
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
         }
         
         .about-img img {
@@ -257,12 +278,16 @@
         }
         
         .about h2 {
-            font-family: 'Cinzel Decorative', serif;
-            color: var(--gold);
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, var(--holy-gold), var(--radiant-magenta), var(--celestial-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
             margin-bottom: 25px;
-            text-shadow: 0 0 20px var(--glow-gold);
+            text-shadow: 0 0 30px var(--glow-holy);
             animation: title-pop 0.8s ease-out;
+            font-weight: 900;
         }
         
         @keyframes title-pop {
@@ -276,15 +301,24 @@
             }
         }
         
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
         .about p { 
-            color: #e9d5ff; 
+            color: var(--ethereal-lavender); 
             font-size: 1.2rem;
-            line-height: 1.8;
+            line-height: 2;
         }
         
         .about strong { 
-            color: var(--pink);
-            text-shadow: 0 0 10px var(--glow-pink);
+            background: linear-gradient(90deg, var(--radiant-magenta), var(--holy-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 15px var(--glow-mystic);
+            font-weight: 700;
         }
 
         /* Services */
@@ -292,12 +326,16 @@
         
         .services h2 {
             text-align: center;
-            font-family: 'Cinzel Decorative', serif;
-            color: var(--gold);
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, var(--holy-gold), var(--radiant-magenta), var(--celestial-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
             margin-bottom: 60px;
-            text-shadow: 0 0 20px var(--glow-gold);
+            text-shadow: 0 0 30px var(--glow-holy);
             animation: fade-in-up 1s ease-out;
+            font-weight: 900;
         }
         
         .services-grid {
@@ -307,15 +345,17 @@
         }
         
         .card {
-            background: rgba(5, 2, 10, 0.65);
-            border: 1px solid rgba(255, 215, 0, 0.4);
+            background: rgba(10, 0, 21, 0.75);
+            border: 2px solid;
+            border-image: linear-gradient(135deg, var(--holy-gold), var(--radiant-magenta)) 1;
             border-radius: 25px;
             padding: 40px;
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(15px);
             position: relative;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             animation: card-appear 0.8s ease-out backwards;
+            box-shadow: 0 0 30px var(--glow-divine);
         }
         
         @keyframes card-appear {
@@ -349,9 +389,9 @@
         
         .card:hover {
             transform: translateY(-12px) rotateX(5deg);
-            box-shadow: 0 20px 50px var(--glow-gold), inset 0 0 30px rgba(255, 215, 0, 0.1);
-            border-color: var(--green);
-            background: rgba(5, 2, 10, 0.85);
+            box-shadow: 0 25px 60px var(--glow-holy), 0 0 40px var(--glow-mystic), inset 0 0 40px rgba(255, 0, 255, 0.15);
+            border-image: linear-gradient(135deg, var(--celestial-cyan), var(--holy-gold), var(--radiant-magenta)) 1;
+            background: rgba(10, 0, 21, 0.92);
         }
         
         .card:hover .card-bg {
@@ -359,18 +399,22 @@
         }
         
         .card h3 { 
-            font-family: 'Cinzel Decorative', serif;
-            color: var(--gold); 
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(135deg, var(--holy-gold), var(--radiant-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 30px; 
             font-size: 2.3rem;
             position: relative;
             z-index: 1;
-            text-shadow: 0 0 15px var(--glow-gold);
+            text-shadow: 0 0 20px var(--glow-holy);
             transition: all 0.3s ease;
+            font-weight: 900;
         }
         
         .card:hover h3 {
-            text-shadow: 0 0 25px var(--glow-gold), 0 0 40px var(--pink);
+            text-shadow: 0 0 30px var(--glow-holy), 0 0 50px var(--glow-mystic), 0 0 30px var(--glow-celestial);
         }
         
         .price-item {
@@ -378,7 +422,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid rgba(168, 85, 247, 0.25);
+            border-bottom: 1px solid rgba(139, 0, 255, 0.35);
             font-size: 1.2rem;
             position: relative;
             z-index: 1;
@@ -387,32 +431,44 @@
         
         .price-item:hover {
             padding-left: 10px;
-            border-bottom-color: var(--green);
+            border-bottom: 2px solid var(--celestial-cyan);
+            background: rgba(139, 0, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px 10px;
         }
         
         .price-item:last-child { border-bottom: none; }
         
         .service-name { 
-            color: #f0abfc; 
-            font-weight: 500;
-            transition: color 0.3s ease;
+            background: linear-gradient(90deg, #d8b4fe, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         
         .price-item:hover .service-name {
-            color: var(--green);
+            background: linear-gradient(90deg, var(--celestial-cyan), var(--holy-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .price { 
-            color: var(--green); 
-            font-weight: 600;
+            background: linear-gradient(90deg, var(--celestial-cyan), var(--radiant-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
             font-size: 1.4rem;
-            text-shadow: 0 0 12px var(--glow-green);
+            text-shadow: 0 0 15px var(--glow-celestial);
             transition: all 0.3s ease;
         }
         
         .price-item:hover .price {
-            text-shadow: 0 0 20px var(--glow-green), 0 0 30px var(--glow-pink);
             font-size: 1.5rem;
+            text-shadow: 0 0 25px var(--glow-celestial), 0 0 35px var(--glow-mystic);
         }
 
         /* CTA */
@@ -424,30 +480,32 @@
         
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gold), var(--pink), var(--purple));
-            background-size: 200% 200%;
-            color: var(--dark);
+            background: linear-gradient(135deg, var(--holy-gold), var(--radiant-magenta), var(--divine-purple), var(--celestial-cyan));
+            background-size: 300% 300%;
+            color: var(--sacred-dark);
             padding: 22px 55px;
             border-radius: 60px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.4rem;
-            box-shadow: 0 0 50px var(--glow-gold), 0 0 30px var(--glow-pink);
+            box-shadow: 0 0 70px var(--glow-holy), 0 0 50px var(--glow-mystic), 0 0 35px var(--glow-celestial);
             transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             font-family: 'Cinzel Decorative', serif;
-            border: 2px solid var(--green);
-            animation: btn-pulse 2s infinite, gradient-shift 3s infinite;
+            border: 3px solid var(--celestial-cyan);
+            animation: btn-pulse 2s infinite, gradient-shift 4s infinite;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         @keyframes btn-pulse {
             0%, 100% { 
-                box-shadow: 0 0 50px var(--glow-gold), 0 0 30px var(--glow-pink);
+                box-shadow: 0 0 70px var(--glow-holy), 0 0 50px var(--glow-mystic);
             }
             50% { 
-                box-shadow: 0 0 80px var(--glow-gold), 0 0 60px var(--glow-pink), 0 0 30px var(--glow-purple);
+                box-shadow: 0 0 100px var(--glow-holy), 0 0 80px var(--glow-mystic), 0 0 60px var(--glow-celestial), 0 0 40px var(--glow-divine);
             }
         }
         
@@ -464,7 +522,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
             animation: shine 3s infinite;
         }
         
@@ -474,8 +532,8 @@
         }
         
         .btn:hover { 
-            transform: scale(1.12) translateY(-5px);
-            box-shadow: 0 0 100px var(--glow-gold), 0 0 80px var(--glow-pink), 0 0 50px var(--glow-purple);
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 0 120px var(--glow-holy), 0 0 100px var(--glow-mystic), 0 0 80px var(--glow-celestial), 0 0 60px var(--glow-divine);
         }
         
         .btn:active {
@@ -484,41 +542,58 @@
         
         .cta-text {
             margin-top: 25px;
-            color: #d8b4fe;
-            font-size: 1.2rem;
+            background: linear-gradient(90deg, var(--ethereal-lavender), var(--celestial-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.3rem;
             animation: fade-in-up 1.5s ease-out;
+            font-weight: 600;
         }
 
         /* Footer */
         footer { 
             text-align: center; 
             padding: 60px 20px; 
-            color: #a78bfa; 
-            border-top: 2px solid;
-            border-image: linear-gradient(45deg, var(--pink), var(--gold), var(--green)) 1;
+            background: linear-gradient(135deg, rgba(10, 0, 21, 0.9), rgba(139, 0, 255, 0.2));
+            border-top: 3px solid;
+            border-image: linear-gradient(45deg, var(--radiant-magenta), var(--holy-gold), var(--celestial-cyan)) 1;
             margin-top: 50px;
-            background: rgba(5, 2, 10, 0.8);
             animation: fade-in-up 1.6s ease-out;
         }
         
+        footer p {
+            background: linear-gradient(90deg, var(--ethereal-lavender), var(--celestial-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
         footer a { 
-            color: var(--gold); 
+            background: linear-gradient(90deg, var(--holy-gold), var(--radiant-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             text-decoration: none; 
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
             position: relative;
         }
         
         footer a:hover {
-            text-shadow: 0 0 15px var(--glow-gold);
+            text-shadow: 0 0 20px var(--glow-holy), 0 0 15px var(--glow-mystic);
         }
         
-        .footer-oshun {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.3rem;
-            color: var(--gold);
+        .footer-divine {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--holy-gold), var(--radiant-magenta), var(--celestial-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin: 15px 0;
-            text-shadow: 0 0 10px var(--glow-gold);
+            text-shadow: 0 0 15px var(--glow-holy);
+            font-weight: 900;
         }
 
         @media (max-width: 768px) { 
@@ -527,6 +602,8 @@
             .services-grid { grid-template-columns: 1fr; }
             .about { grid-template-columns: 1fr; padding: 30px; }
             .crystal-banner { height: 300px; }
+            .about h2 { font-size: 2rem; }
+            .services h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -535,27 +612,27 @@
     
     <div class="container">
         <header>
-            <!-- OSHUN LOGO: Replace this img src with your own Oshun art if you have it -->
-            <div class="oshun-logo">
-                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&fit=crop" alt="Oshun Orisha - Goddess of Rivers & Divination">
+            <!-- YOUR DIVINE LOGO -->
+            <div class="divine-logo">
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&fit=crop" alt="Divine Spirit Blessed">
                 <div class="logo-text">KIEVA</div>
             </div>
-            <p class="tagline">West Side Chicago Clairvoyant • Oshun Blessed • Ancestral Seer</p>
-            <img src="https://images.unsplash.com/photo-1611080626919-30cf4ee57fe7?q=80&w=2070&fit=crop" alt="Crystal Ball Reading" class="crystal-banner">
+            <p class="tagline">✨ West Side Chicago Clairvoyant ✨ Holy Spirit Guided ✨ Ancestral Seer ✨</p>
+            <img src="https://images.unsplash.com/photo-1611080626919-30cf4ee57fe7?q=80&w=2070&fit=crop" alt="Divine Reading" class="crystal-banner">
         </header>
 
         <section class="about">
             <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974&fit=crop" alt="Oshun Blessed Crystal Ball Reading">
+                <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974&fit=crop" alt="Divine Crystal Reading">
             </div>
             <div>
-                <h2>Blessed by Oshun, Guided by Spirit</h2>
+                <h2>Blessed by the Holy Spirit, Guided by the Most High</h2>
                 <p>
-                    Blessings, I'm <strong>Kieva</strong>. For <strong>10+ years I've read professionally</strong> and for <strong>20 years I've walked as a psychic medium & clairvoyant</strong>, blessed by the sweet waters of Oshun. 
+                    Blessings, I'm <strong>Kieva</strong>. For <strong>10+ years I've read professionally</strong> and for <strong>20 years I've walked as a psychic medium & clairvoyant</strong>, blessed by the divine grace of the Holy Spirit and the Most High. 
                     I was born and raised on the West Side of Chicago, with deep ancestral roots flowing from Georgia and Mississippi. 
-                    My gifts flow like the river - guided by Oshun, spirit, fairies, and the wisdom of those who came before me. 
+                    My gifts flow like divine light - guided by the Holy Spirit, ancestral wisdom, celestial beings, and the divine connection of those who came before me. 
                     The Sun, The Star, The World, The Empress - these energies guide every reading. 
-                    Crystal balls, copper rods, and tarot are my tools, but the real magic is our divine connection through Oshun's grace.
+                    Crystal balls, copper rods, and tarot are my tools, but the real magic is our sacred connection through the Holy Spirit's grace and the Most High's infinite wisdom.
                 </p>
             </div>
         </section>
@@ -585,7 +662,7 @@
                 </div>
 
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=2070&fit=crop" alt="Mystical Energy" class="card-bg">
+                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=2070&fit=crop" alt="Divine Energy" class="card-bg">
                     <h3>Psychic & Divination</h3>
                     <div class="price-item">
                         <span class="service-name">Intuitive No Card Reading</span>
@@ -604,14 +681,14 @@
         </section>
 
         <div class="cta">
-            <a href="https://instagram.com/KievaTarot" class="btn">Enter My River @KievaTarot</a>
+            <a href="https://instagram.com/KievaTarot" class="btn">Enter My Divine River @KievaTarot</a>
             <p class="cta-text">DM to Book Your Reading • Virtual & In-Person Sessions Available</p>
         </div>
 
         <footer>
-            <div class="footer-oshun">Ọṣun • Goddess of Sweet Waters & Divination</div>
+            <div class="footer-divine">🙏 Holy Spirit • The Most High • Divine Guidance & Ancestral Wisdom 🙏</div>
             <p>&copy; 2026 Kieva Tarot | West Side Chicago • Georgia • Mississippi Ancestral Lineage</p>
-            <p style="margin-top: 12px;"><a href="https://instagram.com/KievaTarot">@KievaTarot</a> • Protected by Oshun, Spirit, Fairies & Ancestors</p>
+            <p style="margin-top: 12px;"><a href="https://instagram.com/KievaTarot">@KievaTarot</a> • Protected by the Holy Spirit, Divine Light, Ancestors & Celestial Beings</p>
         </footer>
     </div>
 
@@ -633,12 +710,12 @@
             
             createParticle() {
                 const particle = document.createElement('div');
-                const types = ['gold', 'pink', 'purple'];
+                const types = ['holy', 'mystic', 'divine', 'celestial'];
                 const type = types[Math.floor(Math.random() * types.length)];
                 
                 particle.className = `particle ${type}`;
                 
-                const size = Math.random() * 8 + 2;
+                const size = Math.random() * 10 + 3;
                 particle.style.width = size + 'px';
                 particle.style.height = size + 'px';
                 particle.style.left = Math.random() * 100 + '%';
@@ -706,31 +783,32 @@
             });
         });
         
-        // Add interactive glow effect to mouse movement
+        // Add interactive divine glow effect to mouse movement
         document.addEventListener('mousemove', (e) => {
             const glow = document.createElement('div');
             glow.style.position = 'fixed';
             glow.style.left = e.clientX + 'px';
             glow.style.top = e.clientY + 'px';
-            glow.style.width = '40px';
-            glow.style.height = '40px';
+            glow.style.width = '50px';
+            glow.style.height = '50px';
             glow.style.borderRadius = '50%';
-            glow.style.background = 'radial-gradient(circle, rgba(255,215,0,0.3), transparent)';
+            glow.style.background = 'radial-gradient(circle, rgba(255,215,0,0.4), rgba(139,0,255,0.3), transparent)';
             glow.style.pointerEvents = 'none';
             glow.style.zIndex = '999';
-            glow.style.animation = 'fade-out 1s forwards';
+            glow.style.animation = 'fade-out 1.2s forwards';
+            glow.style.boxShadow = '0 0 30px rgba(0,255,255,0.5)';
             
             document.body.appendChild(glow);
             
-            setTimeout(() => glow.remove(), 1000);
+            setTimeout(() => glow.remove(), 1200);
         });
         
         // Add fade-out animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fade-out {
-                0% { opacity: 1; }
-                100% { opacity: 0; }
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(1.5); }
             }
         `;
         document.head.appendChild(style);
