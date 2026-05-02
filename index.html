@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kieva Tarot - Oshun Blessed | West Side Chicago Psychic Medium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ec4899;
+            --purple: #a855f7;
+            --green: #22c55e;
+            --gold: #FFD700;
+            --dark: #05020a;
+            --glow-pink: rgba(236, 72, 153, 0.7);
+            --glow-purple: rgba(168, 85, 247, 0.7);
+            --glow-green: rgba(34, 197, 94, 0.6);
+            --glow-gold: rgba(255, 215, 0, 0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        /* Oshun + Mythological Watermarks */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: 
+                url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964') center/cover,
+                radial-gradient(circle at 20% 10%, var(--glow-pink) 0%, transparent 20%),
+                radial-gradient(circle at 80% 30%, var(--glow-purple) 0%, transparent 25%),
+                radial-gradient(circle at 40% 90%, var(--glow-green) 0%, transparent 20%);
+            background-blend-mode: soft-light, overlay;
+            opacity: 0.12;
+            z-index: -3;
+            mix-blend-mode: screen;
+        }
+        
+        /* Animated Particles System */
+        .particle-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(0.5px);
+        }
+        
+        .particle.gold {
+            background: radial-gradient(circle at 30% 30%, #FFE55C, var(--gold));
+            box-shadow: 0 0 20px var(--glow-gold), inset -2px -2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .particle.pink {
+            background: radial-gradient(circle at 30% 30%, #ff69b4, var(--pink));
+            box-shadow: 0 0 15px var(--glow-pink);
+        }
+        
+        .particle.purple {
+            background: radial-gradient(circle at 30% 30%, #da70d6, var(--purple));
+            box-shadow: 0 0 15px var(--glow-purple);
+        }
+        
+        /* Particle Animations */
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) scale(0);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes drift {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(30px); }
+            100% { transform: translateX(0); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { filter: blur(0.5px) brightness(1); }
+            50% { filter: blur(1px) brightness(1.3); }
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        
+        /* Header with Oshun Logo */
+        header { 
+            text-align: center; 
+            padding: 80px 20px 60px;
+            position: relative;
+        }
+        
+        .oshun-logo {
+            max-width: 380px;
+            margin: 0 auto 10px;
+            position: relative;
+            filter: drop-shadow(0 0 35px var(--glow-gold));
+            animation: logo-float 6s ease-in-out infinite;
+        }
+        
+        @keyframes logo-float {
+            0%, 100% { transform: translateY(0px) rotateZ(-1deg); }
+            50% { transform: translateY(-20px) rotateZ(1deg); }
+        }
+        
+        .oshun-logo img {
+            width: 100%;
+            height: auto;
+            opacity: 0.95;
+            transition: opacity 0.3s ease;
+        }
+        
+        .oshun-logo img:hover {
+            opacity: 1;
+            filter: drop-shadow(0 0 50px var(--glow-gold));
+        }
+        
+        .logo-text {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--dark);
+            text-shadow: 0 0 15px var(--glow-gold), 0 0 30px var(--gold);
+            letter-spacing: 3px;
+            animation: text-shimmer 3s infinite;
+        }
+        
+        @keyframes text-shimmer {
+            0%, 100% { text-shadow: 0 0 15px var(--glow-gold), 0 0 30px var(--gold); }
+            50% { text-shadow: 0 0 25px var(--glow-gold), 0 0 45px var(--gold); }
+        }
+        
+        .tagline { 
+            font-size: 1.5rem; 
+            color: #d8b4fe; 
+            margin: 25px 0 30px;
+            font-weight: 300;
+            animation: fade-in-up 1s ease-out;
+        }
+        
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .crystal-banner {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            border-radius: 20px;
+            box-shadow: 0 0 50px var(--glow-purple);
+            border: 2px solid var(--gold);
+            animation: crystal-glow 3s ease-in-out infinite;
+            object-fit: cover;
+            height: 400px;
+        }
+        
+        @keyframes crystal-glow {
+            0%, 100% {
+                box-shadow: 0 0 50px var(--glow-purple), 0 0 80px rgba(168, 85, 247, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 70px var(--glow-gold), 0 0 100px rgba(255, 215, 0, 0.3);
+            }
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(5, 2, 10, 0.75);
+            border: 2px solid;
+            border-image: linear-gradient(45deg, var(--pink), var(--gold), var(--green)) 1;
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px var(--glow-purple);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            animation: fade-in-up 1.2s ease-out;
+        }
+        
+        .about-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 30px var(--glow-gold);
+            border: 2px solid var(--gold);
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+        }
+        
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(236, 72, 153, 0.05));
+            pointer-events: none;
+            z-index: 2;
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .about h2 {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px var(--glow-gold);
+            animation: title-pop 0.8s ease-out;
+        }
+        
+        @keyframes title-pop {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .about p { 
+            color: #e9d5ff; 
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .about strong { 
+            color: var(--pink);
+            text-shadow: 0 0 10px var(--glow-pink);
+        }
+
+        /* Services */
+        .services { margin: 80px 0; }
+        
+        .services h2 {
+            text-align: center;
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-shadow: 0 0 20px var(--glow-gold);
+            animation: fade-in-up 1s ease-out;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 35px;
+        }
+        
+        .card {
+            background: rgba(5, 2, 10, 0.65);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 25px;
+            padding: 40px;
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: card-appear 0.8s ease-out backwards;
+        }
+        
+        @keyframes card-appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .card-bg {
+            position: absolute;
+            top: 0; right: 0;
+            width: 150px;
+            opacity: 0.08;
+            z-index: 0;
+            animation: rotate-bg 20s linear infinite;
+        }
+        
+        @keyframes rotate-bg {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .card:hover {
+            transform: translateY(-12px) rotateX(5deg);
+            box-shadow: 0 20px 50px var(--glow-gold), inset 0 0 30px rgba(255, 215, 0, 0.1);
+            border-color: var(--green);
+            background: rgba(5, 2, 10, 0.85);
+        }
+        
+        .card:hover .card-bg {
+            animation: rotate-bg 10s linear infinite;
+        }
+        
+        .card h3 { 
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--gold); 
+            margin-bottom: 30px; 
+            font-size: 2.3rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 15px var(--glow-gold);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover h3 {
+            text-shadow: 0 0 25px var(--glow-gold), 0 0 40px var(--pink);
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.25);
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .price-item:hover {
+            padding-left: 10px;
+            border-bottom-color: var(--green);
+        }
+        
+        .price-item:last-child { border-bottom: none; }
+        
+        .service-name { 
+            color: #f0abfc; 
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .price-item:hover .service-name {
+            color: var(--green);
+        }
+        
+        .price { 
+            color: var(--green); 
+            font-weight: 600;
+            font-size: 1.4rem;
+            text-shadow: 0 0 12px var(--glow-green);
+            transition: all 0.3s ease;
+        }
+        
+        .price-item:hover .price {
+            text-shadow: 0 0 20px var(--glow-green), 0 0 30px var(--glow-pink);
+            font-size: 1.5rem;
+        }
+
+        /* CTA */
+        .cta { 
+            text-align: center; 
+            margin: 90px 0 60px;
+            animation: fade-in-up 1.4s ease-out;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--pink), var(--purple));
+            background-size: 200% 200%;
+            color: var(--dark);
+            padding: 22px 55px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 0 50px var(--glow-gold), 0 0 30px var(--glow-pink);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'Cinzel Decorative', serif;
+            border: 2px solid var(--green);
+            animation: btn-pulse 2s infinite, gradient-shift 3s infinite;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        @keyframes btn-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 50px var(--glow-gold), 0 0 30px var(--glow-pink);
+            }
+            50% { 
+                box-shadow: 0 0 80px var(--glow-gold), 0 0 60px var(--glow-pink), 0 0 30px var(--glow-purple);
+            }
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translate(-100%, -100%); }
+            100% { transform: translate(100%, 100%); }
+        }
+        
+        .btn:hover { 
+            transform: scale(1.12) translateY(-5px);
+            box-shadow: 0 0 100px var(--glow-gold), 0 0 80px var(--glow-pink), 0 0 50px var(--glow-purple);
+        }
+        
+        .btn:active {
+            transform: scale(1.08) translateY(-2px);
+        }
+        
+        .cta-text {
+            margin-top: 25px;
+            color: #d8b4fe;
+            font-size: 1.2rem;
+            animation: fade-in-up 1.5s ease-out;
+        }
+
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            color: #a78bfa; 
+            border-top: 2px solid;
+            border-image: linear-gradient(45deg, var(--pink), var(--gold), var(--green)) 1;
+            margin-top: 50px;
+            background: rgba(5, 2, 10, 0.8);
+            animation: fade-in-up 1.6s ease-out;
+        }
+        
+        footer a { 
+            color: var(--gold); 
+            text-decoration: none; 
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        footer a:hover {
+            text-shadow: 0 0 15px var(--glow-gold);
+        }
+        
+        .footer-oshun {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin: 15px 0;
+            text-shadow: 0 0 10px var(--glow-gold);
+        }
+
+        @media (max-width: 768px) { 
+            .logo-text { font-size: 2rem; }
+            .card { padding: 30px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .about { grid-template-columns: 1fr; padding: 30px; }
+            .crystal-banner { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particle-field" id="particles"></div>
+    
+    <div class="container">
+        <header>
+            <!-- OSHUN LOGO: Replace this img src with your own Oshun art if you have it -->
+            <div class="oshun-logo">
+                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&fit=crop" alt="Oshun Orisha - Goddess of Rivers & Divination">
+                <div class="logo-text">KIEVA</div>
+            </div>
+            <p class="tagline">West Side Chicago Clairvoyant • Oshun Blessed • Ancestral Seer</p>
+            <img src="https://images.unsplash.com/photo-1611080626919-30cf4ee57fe7?q=80&w=2070&fit=crop" alt="Crystal Ball Reading" class="crystal-banner">
+        </header>
+
+        <section class="about">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974&fit=crop" alt="Oshun Blessed Crystal Ball Reading">
+            </div>
+            <div>
+                <h2>Blessed by Oshun, Guided by Spirit</h2>
+                <p>
+                    Blessings, I'm <strong>Kieva</strong>. For <strong>10+ years I've read professionally</strong> and for <strong>20 years I've walked as a psychic medium & clairvoyant</strong>, blessed by the sweet waters of Oshun. 
+                    I was born and raised on the West Side of Chicago, with deep ancestral roots flowing from Georgia and Mississippi. 
+                    My gifts flow like the river - guided by Oshun, spirit, fairies, and the wisdom of those who came before me. 
+                    The Sun, The Star, The World, The Empress - these energies guide every reading. 
+                    Crystal balls, copper rods, and tarot are my tools, but the real magic is our divine connection through Oshun's grace.
+                </p>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Sacred Services</h2>
+            <div class="services-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1633793566184-0e4b0d0c0b3e?q=80&w=1964&fit=crop" alt="The Sun Tarot" class="card-bg">
+                    <h3>Tarot & Spreads</h3>
+                    <div class="price-item">
+                        <span class="service-name">15 Min Reading - The Star</span>
+                        <span class="price">$25</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="service-name">30 Min Reading - The Sun</span>
+                        <span class="price">$45</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="service-name">45 Min Reading - The World</span>
+                        <span class="price">$60</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="service-name">Custom Tarot Spreads</span>
+                        <span class="price">From $25</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=2070&fit=crop" alt="Mystical Energy" class="card-bg">
+                    <h3>Psychic & Divination</h3>
+                    <div class="price-item">
+                        <span class="service-name">Intuitive No Card Reading</span>
+                        <span class="price">$50</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="service-name">Crystal Ball Reading</span>
+                        <span class="price">$75</span>
+                    </div>
+                    <div class="price-item">
+                        <span class="service-name">Yes/No Copper Rod Reading</span>
+                        <span class="price">$15</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta">
+            <a href="https://instagram.com/KievaTarot" class="btn">Enter My River @KievaTarot</a>
+            <p class="cta-text">DM to Book Your Reading • Virtual & In-Person Sessions Available</p>
+        </div>
+
+        <footer>
+            <div class="footer-oshun">Ọṣun • Goddess of Sweet Waters & Divination</div>
+            <p>&copy; 2026 Kieva Tarot | West Side Chicago • Georgia • Mississippi Ancestral Lineage</p>
+            <p style="margin-top: 12px;"><a href="https://instagram.com/KievaTarot">@KievaTarot</a> • Protected by Oshun, Spirit, Fairies & Ancestors</p>
+        </footer>
+    </div>
+
+    <script>
+        // Advanced Particle System - Real animated particles
+        class ParticleSystem {
+            constructor() {
+                this.container = document.getElementById('particles');
+                this.particles = [];
+                this.init();
+            }
+            
+            init() {
+                // Create continuous particle stream
+                setInterval(() => this.createParticle(), 100);
+                // Cleanup old particles
+                setInterval(() => this.cleanup(), 1000);
+            }
+            
+            createParticle() {
+                const particle = document.createElement('div');
+                const types = ['gold', 'pink', 'purple'];
+                const type = types[Math.floor(Math.random() * types.length)];
+                
+                particle.className = `particle ${type}`;
+                
+                const size = Math.random() * 8 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.bottom = '-20px';
+                
+                const duration = Math.random() * 8 + 12;
+                const drift = Math.random() * 200 - 100;
+                
+                particle.style.animation = `float-up ${duration}s ease-in forwards`;
+                particle.style.setProperty('--drift', drift + 'px');
+                
+                // Custom animation with drift
+                const keyframes = `
+                    @keyframes float-up-custom-${Math.random()} {
+                        0% {
+                            transform: translateY(0) translateX(0) scale(1);
+                            opacity: 0;
+                        }
+                        10% { opacity: 1; }
+                        90% { opacity: 1; }
+                        100% {
+                            transform: translateY(-${window.innerHeight + 100}px) translateX(${drift}px) scale(0);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                
+                particle.style.animation = `float-up-custom-${Math.random()} ${duration}s ease-in forwards`;
+                
+                if (Math.random() > 0.5) {
+                    particle.style.animation += `, drift ${Math.random() * 4 + 3}s ease-in-out infinite`;
+                }
+                
+                this.container.appendChild(particle);
+                this.particles.push({
+                    element: particle,
+                    created: Date.now(),
+                    duration: duration * 1000
+                });
+            }
+            
+            cleanup() {
+                const now = Date.now();
+                this.particles = this.particles.filter(p => {
+                    if (now - p.created > p.duration + 1000) {
+                        p.element.remove();
+                        return false;
+                    }
+                    return true;
+                });
+            }
+        }
+        
+        // Initialize particle system
+        new ParticleSystem();
+        
+        // Smooth scroll effect for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Add interactive glow effect to mouse movement
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.createElement('div');
+            glow.style.position = 'fixed';
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+            glow.style.width = '40px';
+            glow.style.height = '40px';
+            glow.style.borderRadius = '50%';
+            glow.style.background = 'radial-gradient(circle, rgba(255,215,0,0.3), transparent)';
+            glow.style.pointerEvents = 'none';
+            glow.style.zIndex = '999';
+            glow.style.animation = 'fade-out 1s forwards';
+            
+            document.body.appendChild(glow);
+            
+            setTimeout(() => glow.remove(), 1000);
+        });
+        
+        // Add fade-out animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fade-out {
+                0% { opacity: 1; }
+                100% { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
