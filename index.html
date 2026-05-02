@@ -7,7 +7,7 @@
     <meta property="og:title" content="Kieva Tarot - Anointed by The Most High">
     <meta property="og:description" content="Meet Kieva • West Side Chicago Prophetess • Holy Spirit Led • 10+ years pro • 20 years spiritual gifts">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://raw.githubusercontent.com/robertthegreat01-lgtm/kieva/main/assets/kieva.jpg">
+    <meta property="og:image" content="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwDAwwEAwMDBwcGBwcGBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwf/2wBDAQICAgICAwUDAwwEBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwf/wAARCAwgEDADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -284,15 +284,22 @@
         }
 
         .cta { text-align: center; margin: 90px 0 60px; }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
         .btn {
             display: inline-block;
             background: linear-gradient(45deg, var(--holy-gold), var(--pure-white), var(--pink-glow), var(--holy-gold));
             color: var(--dark);
-            padding: 25px 65px;
+            padding: 25px 50px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             box-shadow: 0 0 60px var(--glow-gold);
             transition: all 0.4s ease;
             font-family: 'Cinzel Decorative', serif;
@@ -338,6 +345,11 @@
             margin: 15px 0;
             text-shadow: 0 0 15px var(--glow-gold);
         }
+        .payment-info {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #E0AAFF;
+        }
 
         @media (max-width: 768px) { 
             .logo-3d { font-size: 3rem; }
@@ -345,6 +357,8 @@
             .services-grid { grid-template-columns: 1fr; }
             .meet-kieva { padding: 40px 30px; }
             .kieva-hero { width: 220px; height: 220px; }
+            .btn-container { flex-direction: column; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
@@ -355,7 +369,7 @@
         <header>
             <div class="kieva-hero">
                 <div class="halo"></div>
-                <img src="https://raw.githubusercontent.com/robertthegreat01-lgtm/kieva/main/assets/kieva.jpg" alt="Prophetess Kieva - Anointed by The Most High" class="kieva-photo">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwwDAwwEAwMDBwcGBwcGBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwf/2wBDAQICAgICAwUDAwwEBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwf/wAARCAwgEDADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWm5ybnJ2eoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/2Q==" alt="Prophetess Kieva - Anointed by The Most High" class="kieva-photo">
             </div>
             <div class="crown">👑</div>
             <div class="logo-3d">KIEVA</div>
@@ -415,14 +429,18 @@
         </section>
 
         <div class="cta">
-            <a href="https://instagram.com/KievaTarot" class="btn">👑 Enter His Presence @KievaTarot 👑</a>
-            <p style="margin-top: 25px; color: #E0AAFF; font-size: 1.3rem;">✨ DM for Prayer & Prophecy • Virtual & In-Person Sessions Available ✨</p>
+            <div class="btn-container">
+                <a href="https://instagram.com/KievaTarot" class="btn">👑 @KievaTarot 👑</a>
+                <a href="https://cash.app/$lekieva" class="btn">💚 $lekieva 💚</a>
+            </div>
+            <p style="color: #E0AAFF; font-size: 1.3rem;">✨ DM for Prayer & Prophecy • Virtual & In-Person Sessions Available ✨</p>
+            <p class="payment-info">💰 <strong>Cash App:</strong> <a href="https://cash.app/$lekieva" style="color: var(--pink-glow);">$lekieva</a> • Instagram: <a href="https://instagram.com/KievaTarot" style="color: var(--pink-glow);">@KievaTarot</a></p>
         </div>
 
         <footer>
             <div class="footer-holy">🙏 The Most High • Holy Spirit • Yeshua 🕊️</div>
             <p>&copy; 2026 Kieva Tarot | West Side Chicago • Georgia • Mississippi Anointed Lineage</p>
-            <p style="margin-top: 12px;"><a href="https://instagram.com/KievaTarot">@KievaTarot</a> • Covered by the Blood • Led by the Spirit 🔥</p>
+            <p style="margin-top: 12px;"><a href="https://instagram.com/KievaTarot">@KievaTarot</a> • <a href="https://cash.app/$lekieva">$lekieva</a> • Covered by the Blood • Led by the Spirit 🔥</p>
         </footer>
     </div>
 
