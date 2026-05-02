@@ -4,599 +4,799 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kieva Tarot - Oshun Blessed | West Side Chicago Psychic Medium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Kieva Tarot - Oshun Blessed Clairvoyant & Psychic Medium from West Side Chicago. 10+ years professional, 20 years gifted. Tarot, Crystal Ball, Copper Rod readings.">
+    <meta property="og:title" content="Kieva Tarot - Oshun Blessed Psychic Medium">
+    <meta property="og:description" content="West Side Chicago Clairvoyant • 10+ years pro • 20 years psychic medium • Oshun Blessed">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Marcellus+SC&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --pink: #ec4899;
             --purple: #a855f7;
             --green: #22c55e;
             --gold: #FFD700;
+            --honey: #f5b041;
             --dark: #05020a;
             --glow-pink: rgba(236, 72, 153, 0.7);
             --glow-purple: rgba(168, 85, 247, 0.7);
             --glow-green: rgba(34, 197, 94, 0.6);
-            --glow-gold: rgba(255, 215, 0, 0.5);
+            --glow-gold: rgba(255, 215, 0, 0.55);
+            --glow-honey: rgba(245, 176, 65, 0.6);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Cormorant Garamond', 'Philosopher', serif;
             background: var(--dark);
-            color: #fff;
-            line-height: 1.8;
+            color: #f5e9ff;
+            line-height: 1.75;
             overflow-x: hidden;
-            background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+            font-size: 18px;
+            font-weight: 400;
+            position: relative;
         }
-        /* Oshun + Mythological Watermarks */
-        body::before {
+
+        /* Cosmic background image layer (real galaxy photo) */
+        .cosmic-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -5;
+            background:
+                linear-gradient(180deg, rgba(5,2,10,0.78) 0%, rgba(15,5,24,0.85) 50%, rgba(5,2,10,0.95) 100%),
+                url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat fixed,
+                radial-gradient(ellipse at top, #1a0b2e 0%, var(--dark) 60%);
+        }
+        .cosmic-bg::after {
             content: '';
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: 
-                url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964') center/cover,
-                radial-gradient(circle at 20% 10%, var(--glow-pink) 0%, transparent 20%),
-                radial-gradient(circle at 80% 30%, var(--glow-purple) 0%, transparent 25%),
-                radial-gradient(circle at 40% 90%, var(--glow-green) 0%, transparent 20%);
-            background-blend-mode: soft-light, overlay;
-            opacity: 0.12;
-            z-index: -3;
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 18% 12%, var(--glow-pink) 0%, transparent 22%),
+                radial-gradient(circle at 82% 28%, var(--glow-purple) 0%, transparent 28%),
+                radial-gradient(circle at 38% 88%, var(--glow-green) 0%, transparent 24%),
+                radial-gradient(circle at 60% 55%, var(--glow-honey) 0%, transparent 32%);
+            opacity: 0.45;
             mix-blend-mode: screen;
+            pointer-events: none;
         }
-        
-        /* Animated Particles System */
-        .particle-field {
+
+        /* River of golden glyphs flowing softly */
+        .river-watermark {
             position: fixed;
-            top: 0;
-            left: 0;
+            inset: 0;
+            z-index: -3;
+            pointer-events: none;
+            overflow: hidden;
+            opacity: 0.07;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 56px;
+            color: var(--gold);
+            white-space: pre;
+            line-height: 2.4;
+            letter-spacing: 1.2rem;
+            animation: riverflow 60s linear infinite;
+        }
+        @keyframes riverflow {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        /* Canvas for live stardust */
+        #stardust {
+            position: fixed;
+            inset: 0;
             width: 100%;
             height: 100%;
+            z-index: -1;
             pointer-events: none;
+        }
+
+        /* Floating background images (butterflies / light orbs) */
+        .floater {
+            position: fixed;
+            width: 110px;
+            height: auto;
+            opacity: 0.42;
+            z-index: -1;
+            filter: drop-shadow(0 0 20px var(--glow-gold)) drop-shadow(0 0 35px var(--glow-pink));
+            pointer-events: none;
+            mix-blend-mode: screen;
+            animation: floaterDrift 14s ease-in-out infinite;
+        }
+        .floater-1 { top: 12%; left: 4%; animation-delay: 0s; }
+        .floater-2 { top: 48%; right: 3%; width: 130px; animation-delay: -5s; animation-duration: 18s; }
+        .floater-3 { bottom: 12%; left: 6%; width: 95px; animation-delay: -9s; animation-duration: 16s; }
+        @keyframes floaterDrift {
+            0%, 100% { transform: translate(0, 0) rotate(-4deg); }
+            25% { transform: translate(20px, -25px) rotate(2deg); }
+            50% { transform: translate(-15px, -45px) rotate(-3deg); }
+            75% { transform: translate(10px, -20px) rotate(4deg); }
+        }
+
+        .container { max-width: 1140px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+
+        /* Floating emoji utility — each emoji bobs on its own rhythm */
+        .float-emoji {
+            display: inline-block;
+            animation: emojiBob 5s ease-in-out infinite;
+            filter: drop-shadow(0 0 14px var(--glow-gold));
+            transform-origin: center;
+            will-change: transform;
+        }
+        .float-emoji.alt { animation-name: emojiBobAlt; animation-duration: 6.5s; }
+        .float-emoji.spin { animation-name: emojiSpin; animation-duration: 8s; }
+        @keyframes emojiBob {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            50%      { transform: translateY(-14px) rotate(3deg); }
+        }
+        @keyframes emojiBobAlt {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            33%      { transform: translateY(-10px) translateX(6px); }
+            66%      { transform: translateY(-18px) translateX(-6px); }
+        }
+        @keyframes emojiSpin {
+            0%, 100% { transform: rotate(-8deg) scale(1); }
+            50%      { transform: rotate(8deg) scale(1.08); }
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 70px 20px 40px;
+            position: relative;
+        }
+        .crown-decor {
+            font-size: 2.4rem;
+            margin-bottom: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .crown-decor .float-emoji { filter: drop-shadow(0 0 22px var(--glow-gold)); }
+
+        .oshun-portrait {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            border: 3px solid var(--gold);
+            box-shadow:
+                0 0 50px var(--glow-gold),
+                0 0 90px var(--glow-honey),
+                inset 0 0 30px rgba(255,215,0,0.25);
+            background:
+                radial-gradient(circle at 50% 35%, #f5b041 0%, #d4a017 35%, #8b6914 75%, #2a1c08 100%);
+        }
+        .oshun-portrait::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=600&q=80') center/cover;
+            opacity: 0.5;
+            mix-blend-mode: overlay;
+        }
+        .oshun-portrait::after {
+            content: '👸🏾';
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 110px;
+            filter: drop-shadow(0 0 18px var(--glow-gold));
+            text-shadow: 0 0 30px rgba(255,215,0,0.7);
+        }
+        .oshun-portrait-ring {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: conic-gradient(from 0deg, var(--gold), var(--pink), var(--purple), var(--green), var(--gold));
+            padding: 6px;
+            box-shadow: 0 0 70px var(--glow-pink), 0 0 120px var(--glow-purple);
+            animation: rotateRing 18s linear infinite;
+        }
+        @keyframes rotateRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .oshun-portrait-ring > .oshun-portrait { animation: rotateRing 18s linear infinite reverse; }
+
+        /* Sub heading - readable mythic capital */
+        .sub-script {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.8rem;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 0.6rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 25px var(--glow-gold), 0 2px 4px rgba(0,0,0,0.6);
+            margin-bottom: 6px;
+            animation: textShimmer 5s ease-in-out infinite;
+        }
+        @keyframes textShimmer {
+            0%, 100% { text-shadow: 0 0 20px var(--glow-gold); opacity: 0.95; }
+            50%      { text-shadow: 0 0 35px var(--glow-gold), 0 0 55px var(--glow-honey); opacity: 1; }
+        }
+
+        .logo-text {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold) 0%, #fff8b0 25%, var(--pink) 55%, var(--purple) 85%, var(--gold) 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 60px var(--glow-gold);
+            letter-spacing: 10px;
+            line-height: 1;
+            margin: 10px 0;
+            animation: gradientFlow 8s ease infinite, logoFloat 6s ease-in-out infinite;
+            filter: drop-shadow(0 4px 20px rgba(255,215,0,0.4));
+        }
+        @keyframes gradientFlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-8px); }
+        }
+
+        .tagline {
+            font-family: 'Philosopher', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: #f5e1ff;
+            margin: 14px auto 24px;
+            font-weight: 400;
+            text-shadow: 0 0 18px var(--glow-purple);
+            line-height: 1.5;
+            max-width: 720px;
+            letter-spacing: 0.5px;
+        }
+        .tagline-meta {
+            font-family: 'Marcellus SC', serif;
+            font-size: 1rem;
+            letter-spacing: 6px;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin: 5px 0 22px;
+            opacity: 0.95;
+        }
+
+        /* Crystal banner — emojis spread out and floating individually */
+        .crystal-banner {
+            margin: 35px auto;
+            padding: 26px 40px;
+            border-radius: 100px;
+            box-shadow:
+                0 0 50px var(--glow-purple),
+                inset 0 0 30px rgba(255,215,0,0.08);
+            border: 2px solid var(--gold);
+            background:
+                linear-gradient(90deg, rgba(255,215,0,0.08), rgba(236,72,153,0.08), rgba(255,215,0,0.08));
+            max-width: 720px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+        }
+        .crystal-banner .float-emoji {
+            font-size: 2.6rem;
+            filter: drop-shadow(0 0 16px var(--glow-gold)) drop-shadow(0 0 25px var(--glow-pink));
+        }
+
+        /* Section dividers */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px 0 30px;
+            gap: 24px;
+        }
+        .divider-line {
+            flex: 1;
+            max-width: 220px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .divider-glyph {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            text-shadow: 0 0 18px var(--glow-gold);
+            letter-spacing: 0.5rem;
+        }
+
+        /* ABOUT */
+        .about {
+            background:
+                linear-gradient(135deg, rgba(20, 8, 40, 0.85), rgba(10, 4, 20, 0.85));
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            border-radius: 30px;
+            padding: 70px 50px 55px;
+            margin: 60px 0;
+            backdrop-filter: blur(18px);
+            box-shadow:
+                0 0 60px var(--glow-purple),
+                inset 0 1px 0 rgba(255,215,0,0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1400&q=80') center/cover;
+            opacity: 0.06;
             z-index: 0;
         }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(0.5px);
+        .about > * { position: relative; z-index: 1; }
+        .about-icon {
+            font-size: 4rem;
+            display: inline-block;
+            margin-bottom: 14px;
+            filter: drop-shadow(0 0 25px var(--glow-gold));
+            animation: aboutIconFloat 6s ease-in-out infinite;
         }
-        
-        .particle.gold {
-            background: radial-gradient(circle at 30% 30%, #FFE55C, var(--gold));
-            box-shadow: 0 0 20px var(--glow-gold), inset -2px -2px 5px rgba(0,0,0,0.3);
+        @keyframes aboutIconFloat {
+            0%, 100% { transform: translateY(0px) rotate(-3deg); }
+            50%      { transform: translateY(-15px) rotate(3deg); }
         }
-        
-        .particle.pink {
-            background: radial-gradient(circle at 30% 30%, #ff69b4, var(--pink));
-            box-shadow: 0 0 15px var(--glow-pink);
-        }
-        
-        .particle.purple {
-            background: radial-gradient(circle at 30% 30%, #da70d6, var(--purple));
-            box-shadow: 0 0 15px var(--glow-purple);
-        }
-        
-        /* Particle Animations */
-        @keyframes float-up {
-            0% {
-                transform: translateY(0) translateX(0) scale(1);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) translateX(100px) scale(0);
-                opacity: 0;
-            }
-        }
-        
-        @keyframes drift {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(30px); }
-            100% { transform: translateX(0); }
-        }
-        
-        @keyframes pulse-glow {
-            0%, 100% { filter: blur(0.5px) brightness(1); }
-            50% { filter: blur(1px) brightness(1.3); }
-        }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
-        
-        /* Header with Oshun Logo */
-        header { 
-            text-align: center; 
-            padding: 80px 20px 60px;
-            position: relative;
-        }
-        
-        .oshun-logo {
-            max-width: 380px;
-            margin: 0 auto 10px;
-            position: relative;
-            filter: drop-shadow(0 0 35px var(--glow-gold));
-            animation: logo-float 6s ease-in-out infinite;
-        }
-        
-        @keyframes logo-float {
-            0%, 100% { transform: translateY(0px) rotateZ(-1deg); }
-            50% { transform: translateY(-20px) rotateZ(1deg); }
-        }
-        
-        .oshun-logo img {
-            width: 100%;
-            height: auto;
-            opacity: 0.95;
-            transition: opacity 0.3s ease;
-        }
-        
-        .oshun-logo img:hover {
-            opacity: 1;
-            filter: drop-shadow(0 0 50px var(--glow-gold));
-        }
-        
-        .logo-text {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: var(--dark);
-            text-shadow: 0 0 15px var(--glow-gold), 0 0 30px var(--gold);
-            letter-spacing: 3px;
-            animation: text-shimmer 3s infinite;
-        }
-        
-        @keyframes text-shimmer {
-            0%, 100% { text-shadow: 0 0 15px var(--glow-gold), 0 0 30px var(--gold); }
-            50% { text-shadow: 0 0 25px var(--glow-gold), 0 0 45px var(--gold); }
-        }
-        
-        .tagline { 
-            font-size: 1.5rem; 
-            color: #d8b4fe; 
-            margin: 25px 0 30px;
-            font-weight: 300;
-            animation: fade-in-up 1s ease-out;
-        }
-        
-        @keyframes fade-in-up {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .crystal-banner {
-            width: 100%;
-            max-width: 600px;
-            margin: 30px auto;
-            border-radius: 20px;
-            box-shadow: 0 0 50px var(--glow-purple);
-            border: 2px solid var(--gold);
-            animation: crystal-glow 3s ease-in-out infinite;
-            object-fit: cover;
-            height: 400px;
-        }
-        
-        @keyframes crystal-glow {
-            0%, 100% {
-                box-shadow: 0 0 50px var(--glow-purple), 0 0 80px rgba(168, 85, 247, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 70px var(--glow-gold), 0 0 100px rgba(255, 215, 0, 0.3);
-            }
-        }
-
-        /* About Section */
-        .about {
-            background: rgba(5, 2, 10, 0.75);
-            border: 2px solid;
-            border-image: linear-gradient(45deg, var(--pink), var(--gold), var(--green)) 1;
-            border-radius: 25px;
-            padding: 50px;
-            margin: 60px 0;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 0 40px var(--glow-purple);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            animation: fade-in-up 1.2s ease-out;
-        }
-        
-        .about-img {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 0 30px var(--glow-gold);
-            border: 2px solid var(--gold);
-            animation: float 6s ease-in-out infinite;
-            position: relative;
-        }
-        
-        .about-img::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(236, 72, 153, 0.05));
-            pointer-events: none;
-            z-index: 2;
-            animation: shimmer 3s infinite;
-        }
-        
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: cover;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        
         .about h2 {
             font-family: 'Cinzel Decorative', serif;
             color: var(--gold);
             font-size: 2.5rem;
-            margin-bottom: 25px;
-            text-shadow: 0 0 20px var(--glow-gold);
-            animation: title-pop 0.8s ease-out;
+            margin-bottom: 6px;
+            text-shadow: 0 0 25px var(--glow-gold);
+            letter-spacing: 3px;
+            line-height: 1.25;
+            text-transform: uppercase;
         }
-        
-        @keyframes title-pop {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .about p { 
-            color: #e9d5ff; 
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-        
-        .about strong { 
+        .about h2 .accent {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
             color: var(--pink);
-            text-shadow: 0 0 10px var(--glow-pink);
+            display: block;
+            text-shadow: 0 0 22px var(--glow-pink);
+            font-weight: 500;
+            letter-spacing: 6px;
+            margin-top: 14px;
+            text-transform: uppercase;
+            animation: textShimmer 5s ease-in-out infinite;
+        }
+        .about p {
+            color: #f0e6ff;
+            font-size: 1.25rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            margin-top: 22px;
+            line-height: 1.7;
+        }
+        .about p strong {
+            color: var(--honey);
+            font-weight: 600;
+            font-style: italic;
+        }
+        .about p .lead {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+            text-shadow: 0 0 18px var(--glow-gold);
         }
 
-        /* Services */
+        /* Quote ribbon — readable serif with shimmer */
+        .quote-ribbon {
+            font-family: 'Cinzel', serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 1.6rem;
+            color: var(--gold);
+            text-align: center;
+            margin: 50px auto;
+            max-width: 820px;
+            line-height: 1.5;
+            text-shadow: 0 0 20px var(--glow-gold);
+            padding: 20px;
+            letter-spacing: 2px;
+            animation: textShimmer 6s ease-in-out infinite;
+        }
+        .quote-ribbon::before, .quote-ribbon::after {
+            content: '✧';
+            color: var(--pink);
+            margin: 0 18px;
+            font-style: normal;
+            text-shadow: 0 0 18px var(--glow-pink);
+        }
+
+        /* SERVICES */
         .services { margin: 80px 0; }
-        
-        .services h2 {
+        .section-title {
             text-align: center;
             font-family: 'Cinzel Decorative', serif;
             color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            text-shadow: 0 0 20px var(--glow-gold);
-            animation: fade-in-up 1s ease-out;
+            font-size: 2.6rem;
+            margin-bottom: 8px;
+            text-shadow: 0 0 25px var(--glow-gold);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            animation: textShimmer 5s ease-in-out infinite;
         }
-        
+        .section-subtitle {
+            text-align: center;
+            font-family: 'Marcellus SC', serif;
+            font-size: 1rem;
+            color: var(--pink);
+            margin-bottom: 45px;
+            text-shadow: 0 0 18px var(--glow-pink);
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 35px;
         }
-        
         .card {
-            background: rgba(5, 2, 10, 0.65);
-            border: 1px solid rgba(255, 215, 0, 0.4);
-            border-radius: 25px;
-            padding: 40px;
-            backdrop-filter: blur(12px);
+            background:
+                linear-gradient(160deg, rgba(15,5,30,0.92), rgba(8,3,16,0.95));
+            border: 1px solid rgba(255, 215, 0, 0.45);
+            border-radius: 28px;
+            padding: 45px 40px;
+            backdrop-filter: blur(14px);
             position: relative;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            animation: card-appear 0.8s ease-out backwards;
+            transition: all 0.4s cubic-bezier(.2,.8,.2,1);
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,215,0,0.15);
         }
-        
-        @keyframes card-appear {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
-        
         .card-bg {
             position: absolute;
-            top: 0; right: 0;
-            width: 150px;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
             opacity: 0.08;
             z-index: 0;
-            animation: rotate-bg 20s linear infinite;
+            transition: opacity 0.4s ease;
         }
-        
-        @keyframes rotate-bg {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .card:nth-child(1) .card-bg {
+            background-image: url('https://images.unsplash.com/photo-1633158829875-e5316a358c6f?auto=format&fit=crop&w=1200&q=80');
         }
-        
+        .card:nth-child(2) .card-bg {
+            background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1200&q=80');
+        }
+        .card:hover .card-bg { opacity: 0.18; }
         .card:hover {
-            transform: translateY(-12px) rotateX(5deg);
-            box-shadow: 0 20px 50px var(--glow-gold), inset 0 0 30px rgba(255, 215, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow:
+                0 20px 60px var(--glow-gold),
+                0 0 60px var(--glow-pink);
             border-color: var(--green);
-            background: rgba(5, 2, 10, 0.85);
         }
-        
-        .card:hover .card-bg {
-            animation: rotate-bg 10s linear infinite;
-        }
-        
-        .card h3 { 
+        .card > * { position: relative; z-index: 1; }
+        .card h3 {
             font-family: 'Cinzel Decorative', serif;
-            color: var(--gold); 
-            margin-bottom: 30px; 
-            font-size: 2.3rem;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 0 15px var(--glow-gold);
-            transition: all 0.3s ease;
+            color: var(--gold);
+            margin-bottom: 28px;
+            font-size: 1.7rem;
+            text-shadow: 0 0 18px var(--glow-gold);
+            letter-spacing: 3px;
+            text-align: center;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
         }
-        
-        .card:hover h3 {
-            text-shadow: 0 0 25px var(--glow-gold), 0 0 40px var(--pink);
+        .card h3 .h3-script {
+            font-family: 'Marcellus SC', serif;
+            font-size: 0.85rem;
+            color: var(--pink);
+            font-weight: 400;
+            letter-spacing: 5px;
+            text-shadow: 0 0 14px var(--glow-pink);
+            text-transform: uppercase;
         }
-        
+        .card h3 .float-emoji { font-size: 2rem; }
         .price-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(168, 85, 247, 0.25);
-            font-size: 1.2rem;
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            font-size: 1.15rem;
+            gap: 12px;
         }
-        
-        .price-item:hover {
-            padding-left: 10px;
-            border-bottom-color: var(--green);
-        }
-        
         .price-item:last-child { border-bottom: none; }
-        
-        .service-name { 
-            color: #f0abfc; 
+        .service-name {
+            color: #f0abfc;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-family: 'Philosopher', serif;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        
-        .price-item:hover .service-name {
+        .service-name .float-emoji { font-size: 1.4rem; }
+        .price {
             color: var(--green);
-        }
-        
-        .price { 
-            color: var(--green); 
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.4rem;
-            text-shadow: 0 0 12px var(--glow-green);
-            transition: all 0.3s ease;
-        }
-        
-        .price-item:hover .price {
-            text-shadow: 0 0 20px var(--glow-green), 0 0 30px var(--glow-pink);
-            font-size: 1.5rem;
+            font-family: 'Cinzel', serif;
+            text-shadow: 0 0 15px var(--glow-green);
+            letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         /* CTA */
-        .cta { 
-            text-align: center; 
+        .cta {
+            text-align: center;
             margin: 90px 0 60px;
-            animation: fade-in-up 1.4s ease-out;
+            padding: 60px 20px;
+            position: relative;
         }
-        
         .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold), var(--pink), var(--purple));
-            background-size: 200% 200%;
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(45deg, var(--gold), var(--honey), var(--pink), var(--gold));
+            background-size: 300% 300%;
             color: var(--dark);
-            padding: 22px 55px;
+            padding: 22px 48px;
             border-radius: 60px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.4rem;
-            box-shadow: 0 0 50px var(--glow-gold), 0 0 30px var(--glow-pink);
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-size: 1.15rem;
+            box-shadow:
+                0 0 50px var(--glow-gold),
+                0 10px 40px rgba(0,0,0,0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
             font-family: 'Cinzel Decorative', serif;
             border: 2px solid var(--green);
-            animation: btn-pulse 2s infinite, gradient-shift 3s infinite;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
+            animation: pulse 3s infinite, gradientFlow 5s ease infinite;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
-        
-        @keyframes btn-pulse {
-            0%, 100% { 
-                box-shadow: 0 0 50px var(--glow-gold), 0 0 30px var(--glow-pink);
-            }
-            50% { 
-                box-shadow: 0 0 80px var(--glow-gold), 0 0 60px var(--glow-pink), 0 0 30px var(--glow-purple);
-            }
+        .btn .float-emoji { font-size: 1.5rem; }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 50px var(--glow-gold), 0 10px 40px rgba(0,0,0,0.4); }
+            50%      { box-shadow: 0 0 80px var(--glow-pink), 0 0 100px var(--glow-purple); }
         }
-        
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .btn:hover {
+            transform: scale(1.06) translateY(-4px);
         }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: translate(-100%, -100%); }
-            100% { transform: translate(100%, 100%); }
-        }
-        
-        .btn:hover { 
-            transform: scale(1.12) translateY(-5px);
-            box-shadow: 0 0 100px var(--glow-gold), 0 0 80px var(--glow-pink), 0 0 50px var(--glow-purple);
-        }
-        
-        .btn:active {
-            transform: scale(1.08) translateY(-2px);
-        }
-        
-        .cta-text {
-            margin-top: 25px;
-            color: #d8b4fe;
+        .cta-note {
+            margin-top: 28px;
+            font-family: 'Philosopher', serif;
+            font-style: italic;
             font-size: 1.2rem;
-            animation: fade-in-up 1.5s ease-out;
+            color: #f5e1ff;
+            text-shadow: 0 0 15px var(--glow-purple);
+            letter-spacing: 1px;
         }
 
         /* Footer */
-        footer { 
-            text-align: center; 
-            padding: 60px 20px; 
-            color: #a78bfa; 
-            border-top: 2px solid;
-            border-image: linear-gradient(45deg, var(--pink), var(--gold), var(--green)) 1;
-            margin-top: 50px;
-            background: rgba(5, 2, 10, 0.8);
-            animation: fade-in-up 1.6s ease-out;
-        }
-        
-        footer a { 
-            color: var(--gold); 
-            text-decoration: none; 
-            font-weight: 600;
-            transition: all 0.3s ease;
+        footer {
+            text-align: center;
+            padding: 70px 20px 50px;
+            color: #cbb4ff;
+            border-top: 1px solid rgba(255,215,0,0.4);
+            margin-top: 60px;
+            background:
+                linear-gradient(180deg, rgba(10,4,20,0.5), rgba(5,2,10,0.95));
             position: relative;
         }
-        
-        footer a:hover {
-            text-shadow: 0 0 15px var(--glow-gold);
-        }
-        
-        .footer-oshun {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.3rem;
+        footer a {
             color: var(--gold);
-            margin: 15px 0;
+            text-decoration: none;
+            font-weight: 600;
             text-shadow: 0 0 10px var(--glow-gold);
         }
+        footer a:hover { color: var(--pink); text-shadow: 0 0 12px var(--glow-pink); }
+        .footer-oshun {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin: 10px 0 8px;
+            text-shadow: 0 0 22px var(--glow-gold);
+            line-height: 1.1;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            animation: textShimmer 5s ease-in-out infinite;
+        }
+        .footer-meta {
+            font-family: 'Marcellus SC', serif;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            color: var(--honey);
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+        .footer-copy {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: #b8a4d8;
+        }
+        .footer-protect {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-        @media (max-width: 768px) { 
-            .logo-text { font-size: 2rem; }
-            .card { padding: 30px; }
+        /* Mobile */
+        @media (max-width: 768px) {
+            .logo-text { font-size: 3.6rem; letter-spacing: 5px; }
+            .sub-script { font-size: 1.2rem; letter-spacing: 0.4rem; }
+            .tagline { font-size: 1.2rem; }
+            .card { padding: 30px 25px; }
             .services-grid { grid-template-columns: 1fr; }
-            .about { grid-template-columns: 1fr; padding: 30px; }
-            .crystal-banner { height: 300px; }
+            .about { padding: 50px 25px 40px; }
+            .about h2 { font-size: 1.8rem; letter-spacing: 1.5px; }
+            .about h2 .accent { font-size: 1.1rem; letter-spacing: 3px; }
+            .crystal-banner { gap: 0.8rem; padding: 18px; }
+            .crystal-banner .float-emoji { font-size: 1.7rem; }
+            .section-title { font-size: 1.7rem; letter-spacing: 3px; }
+            .section-subtitle { font-size: 0.8rem; letter-spacing: 4px; }
+            .quote-ribbon { font-size: 1.15rem; letter-spacing: 1px; }
+            .floater { width: 70px !important; opacity: 0.25; }
+            .oshun-portrait, .oshun-portrait-ring { width: 180px; height: 180px; }
+            .oshun-portrait-ring { width: 200px; height: 200px; }
+            .crown-decor { font-size: 1.6rem; gap: 1.2rem; }
+            .footer-oshun { font-size: 1.4rem; letter-spacing: 5px; }
+            .btn { font-size: 0.95rem; padding: 18px 28px; letter-spacing: 2px; }
         }
     </style>
 </head>
 <body>
-    <div class="particle-field" id="particles"></div>
-    
+    <!-- Layered cosmic backdrop with real galaxy imagery -->
+    <div class="cosmic-bg"></div>
+
+    <!-- Flowing river of golden glyphs -->
+    <div class="river-watermark" aria-hidden="true">
+✧   ỌṢUN   ✧   🌊   ✧   ỌṢUN   ✧   🌊   ✧   ỌṢUN   ✧
+🍯   ✧   👑   ✧   🍯   ✧   👑   ✧   🍯   ✧   👑   ✧
+✦   TAROT   ✦   ⭐   ✦   TAROT   ✦   ⭐   ✦   TAROT   ✦
+✧   🔮   ✧   💛   ✧   🔮   ✧   💛   ✧   🔮   ✧   💛
+✧   ỌṢUN   ✧   🌊   ✧   ỌṢUN   ✧   🌊   ✧   ỌṢUN   ✧
+🍯   ✧   👑   ✧   🍯   ✧   👑   ✧   🍯   ✧   👑   ✧
+✦   TAROT   ✦   ⭐   ✦   TAROT   ✦   ⭐   ✦   TAROT   ✦
+✧   🔮   ✧   💛   ✧   🔮   ✧   💛   ✧   🔮   ✧   💛
+    </div>
+
+    <!-- Live canvas stardust (real animated particles) -->
+    <canvas id="stardust"></canvas>
+
+    <!-- Floating background imagery (light orbs / butterflies) -->
+    <img class="floater floater-1" src="https://images.unsplash.com/photo-1559770138-fd6b94c1bd62?auto=format&fit=crop&w=300&q=80" alt="" aria-hidden="true">
+    <img class="floater floater-2" src="https://images.unsplash.com/photo-1567696911980-2eed69a46042?auto=format&fit=crop&w=300&q=80" alt="" aria-hidden="true">
+    <img class="floater floater-3" src="https://images.unsplash.com/photo-1444930694458-01babe71870c?auto=format&fit=crop&w=300&q=80" alt="" aria-hidden="true">
+
     <div class="container">
         <header>
-            <!-- OSHUN LOGO: Replace this img src with your own Oshun art if you have it -->
-            <div class="oshun-logo">
-                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070&fit=crop" alt="Oshun Orisha - Goddess of Rivers & Divination">
-                <div class="logo-text">KIEVA</div>
+            <div class="crown-decor">
+                <span class="float-emoji">✦</span>
+                <span class="float-emoji alt">👑</span>
+                <span class="float-emoji spin">🌊</span>
+                <span class="float-emoji alt">🍯</span>
+                <span class="float-emoji">👑</span>
+                <span class="float-emoji spin">✦</span>
             </div>
-            <p class="tagline">West Side Chicago Clairvoyant • Oshun Blessed • Ancestral Seer</p>
-            <img src="https://images.unsplash.com/photo-1611080626919-30cf4ee57fe7?q=80&w=2070&fit=crop" alt="Crystal Ball Reading" class="crystal-banner">
+
+            <div class="oshun-portrait-ring">
+                <div class="oshun-portrait" role="img" aria-label="Oshun, goddess of sweet waters"></div>
+            </div>
+
+            <div class="sub-script">Oshun Blessed</div>
+            <div class="logo-text">KIEVA</div>
+            <div class="tagline-meta">Tarot &nbsp;·&nbsp; Crystal Ball &nbsp;·&nbsp; Spirit Medium</div>
+            <p class="tagline">A West Side Chicago clairvoyant and seasoned medium — twenty years of devoted practice, ten years professional, rooted in ancestral wisdom and the sacred guidance of Oshun.</p>
+
+            <div class="crystal-banner">
+                <span class="float-emoji">🔮</span>
+                <span class="float-emoji alt">💛</span>
+                <span class="float-emoji spin">🌊</span>
+                <span class="float-emoji">🍯</span>
+                <span class="float-emoji alt">⭐</span>
+                <span class="float-emoji spin">🌊</span>
+                <span class="float-emoji">💛</span>
+                <span class="float-emoji alt">🔮</span>
+            </div>
         </header>
 
+        <div class="divider">
+            <span class="divider-line"></span>
+            <span class="divider-glyph">✧ ❋ ✧</span>
+            <span class="divider-line"></span>
+        </div>
+
         <section class="about">
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974&fit=crop" alt="Oshun Blessed Crystal Ball Reading">
-            </div>
-            <div>
-                <h2>Blessed by Oshun, Guided by Spirit</h2>
-                <p>
-                    Blessings, I'm <strong>Kieva</strong>. For <strong>10+ years I've read professionally</strong> and for <strong>20 years I've walked as a psychic medium & clairvoyant</strong>, blessed by the sweet waters of Oshun. 
-                    I was born and raised on the West Side of Chicago, with deep ancestral roots flowing from Georgia and Mississippi. 
-                    My gifts flow like the river - guided by Oshun, spirit, fairies, and the wisdom of those who came before me. 
-                    The Sun, The Star, The World, The Empress - these energies guide every reading. 
-                    Crystal balls, copper rods, and tarot are my tools, but the real magic is our divine connection through Oshun's grace.
-                </p>
-            </div>
+            <span class="about-icon">🔮</span>
+            <h2>Blessed by Oshun
+                <span class="accent">Guided by Spirit &amp; Ancestors</span>
+            </h2>
+            <p>
+                <span class="lead">Ase — I am Kieva.</span>
+                For more than <strong>ten years I have read Tarot professionally</strong>, with <strong>twenty years of devoted practice</strong> as a psychic medium and clairvoyant. My work is grounded in deep study of the cards, lifelong intuitive gifts, and the disciplined craft of listening to spirit.
+            </p>
+            <p>
+                Born and raised on the <strong>West Side of Chicago</strong>, with ancestral roots running through <strong>Georgia and Mississippi</strong>. Every reading is approached with reverence, discernment, and the wisdom passed down by those who walked before me.
+            </p>
+            <p>
+                <strong>The Sun, The Star, The World, The Empress</strong> — these archetypes shape every spread. The Tarot, crystal ball, and copper rods are my instruments, but the true craft is the steady practice of listening: to symbol, to spirit, and to the truth waiting to be revealed through <strong>Oshun's grace</strong>.
+            </p>
         </section>
 
+        <div class="quote-ribbon">The river always finds her way home.</div>
+
         <section class="services">
-            <h2>Sacred Services</h2>
+            <h2 class="section-title">Sacred Offerings</h2>
+            <p class="section-subtitle">Readings &nbsp;·&nbsp; Rituals &nbsp;·&nbsp; Mediumship</p>
+
             <div class="services-grid">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1633793566184-0e4b0d0c0b3e?q=80&w=1964&fit=crop" alt="The Sun Tarot" class="card-bg">
-                    <h3>Tarot & Spreads</h3>
+                    <div class="card-bg" aria-hidden="true"></div>
+                    <h3>
+                        <span><span class="float-emoji">🌙</span> Tarot &amp; Spreads</span>
+                        <span class="h3-script">Cards of Fate</span>
+                    </h3>
                     <div class="price-item">
-                        <span class="service-name">15 Min Reading - The Star</span>
+                        <span class="service-name"><span class="float-emoji">⭐</span> 15 Min Reading — The Star</span>
                         <span class="price">$25</span>
                     </div>
                     <div class="price-item">
-                        <span class="service-name">30 Min Reading - The Sun</span>
+                        <span class="service-name"><span class="float-emoji alt">☀️</span> 30 Min Reading — The Sun</span>
                         <span class="price">$45</span>
                     </div>
                     <div class="price-item">
-                        <span class="service-name">45 Min Reading - The World</span>
+                        <span class="service-name"><span class="float-emoji spin">🌍</span> 45 Min Reading — The World</span>
                         <span class="price">$60</span>
                     </div>
                     <div class="price-item">
-                        <span class="service-name">Custom Tarot Spreads</span>
+                        <span class="service-name"><span class="float-emoji">👑</span> Custom Tarot Spreads</span>
                         <span class="price">From $25</span>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=2070&fit=crop" alt="Mystical Energy" class="card-bg">
-                    <h3>Psychic & Divination</h3>
+                    <div class="card-bg" aria-hidden="true"></div>
+                    <h3>
+                        <span><span class="float-emoji spin">🔮</span> Psychic &amp; Divination</span>
+                        <span class="h3-script">Whispers of Spirit</span>
+                    </h3>
                     <div class="price-item">
-                        <span class="service-name">Intuitive No Card Reading</span>
+                        <span class="service-name"><span class="float-emoji alt">💫</span> Intuitive No-Card Reading</span>
                         <span class="price">$50</span>
                     </div>
                     <div class="price-item">
-                        <span class="service-name">Crystal Ball Reading</span>
+                        <span class="service-name"><span class="float-emoji">🔮</span> Crystal Ball Reading</span>
                         <span class="price">$75</span>
                     </div>
                     <div class="price-item">
-                        <span class="service-name">Yes/No Copper Rod Reading</span>
+                        <span class="service-name"><span class="float-emoji alt">📿</span> Yes/No Copper Rod Reading</span>
                         <span class="price">$15</span>
                     </div>
                 </div>
@@ -604,136 +804,107 @@
         </section>
 
         <div class="cta">
-            <a href="https://instagram.com/KievaTarot" class="btn">Enter My River @KievaTarot</a>
-            <p class="cta-text">DM to Book Your Reading • Virtual & In-Person Sessions Available</p>
+            <a href="https://instagram.com/KievaTarot" class="btn">
+                <span class="float-emoji">💛</span>
+                Enter My River — @KievaTarot
+                <span class="float-emoji alt">💛</span>
+            </a>
+            <p class="cta-note">DM to book your reading · Virtual &amp; in-person sessions available</p>
         </div>
 
         <footer>
-            <div class="footer-oshun">Ọṣun • Goddess of Sweet Waters & Divination</div>
-            <p>&copy; 2026 Kieva Tarot | West Side Chicago • Georgia • Mississippi Ancestral Lineage</p>
-            <p style="margin-top: 12px;"><a href="https://instagram.com/KievaTarot">@KievaTarot</a> • Protected by Oshun, Spirit, Fairies & Ancestors</p>
+            <div class="footer-oshun">Ọṣun</div>
+            <div class="footer-meta">Goddess of Sweet Waters · Love · Divination</div>
+            <p class="footer-copy">&copy; 2026 Kieva Tarot · West Side Chicago · Georgia &amp; Mississippi Ancestral Lineage</p>
+            <p class="footer-copy" style="margin-top: 14px;">
+                <span class="footer-protect">
+                    <a href="https://instagram.com/KievaTarot">@KievaTarot</a>
+                    <span>· Protected by Oshun <span class="float-emoji">🌊</span> · Spirit · Ancestors</span>
+                </span>
+            </p>
         </footer>
     </div>
 
     <script>
-        // Advanced Particle System - Real animated particles
-        class ParticleSystem {
-            constructor() {
-                this.container = document.getElementById('particles');
-                this.particles = [];
-                this.init();
+        // Live stardust — real animated particles on canvas
+        (function() {
+            const canvas = document.getElementById('stardust');
+            const ctx = canvas.getContext('2d');
+            let W, H, particles = [];
+            const COLORS = [
+                'rgba(255, 215, 0, ',   // gold
+                'rgba(255, 255, 255, ', // white
+                'rgba(245, 176, 65, ',  // honey
+                'rgba(236, 72, 153, ',  // pink
+                'rgba(168, 85, 247, '   // purple
+            ];
+
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
             }
-            
-            init() {
-                // Create continuous particle stream
-                setInterval(() => this.createParticle(), 100);
-                // Cleanup old particles
-                setInterval(() => this.cleanup(), 1000);
+            window.addEventListener('resize', resize);
+            resize();
+
+            function makeParticle() {
+                return {
+                    x: Math.random() * W,
+                    y: Math.random() * H,
+                    r: Math.random() * 2.2 + 0.4,
+                    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                    alpha: Math.random() * 0.8 + 0.2,
+                    dx: (Math.random() - 0.5) * 0.25,
+                    dy: -Math.random() * 0.4 - 0.05,
+                    twinkle: Math.random() * Math.PI * 2,
+                    twinkleSpeed: Math.random() * 0.04 + 0.01
+                };
             }
-            
-            createParticle() {
-                const particle = document.createElement('div');
-                const types = ['gold', 'pink', 'purple'];
-                const type = types[Math.floor(Math.random() * types.length)];
-                
-                particle.className = `particle ${type}`;
-                
-                const size = Math.random() * 8 + 2;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.bottom = '-20px';
-                
-                const duration = Math.random() * 8 + 12;
-                const drift = Math.random() * 200 - 100;
-                
-                particle.style.animation = `float-up ${duration}s ease-in forwards`;
-                particle.style.setProperty('--drift', drift + 'px');
-                
-                // Custom animation with drift
-                const keyframes = `
-                    @keyframes float-up-custom-${Math.random()} {
-                        0% {
-                            transform: translateY(0) translateX(0) scale(1);
-                            opacity: 0;
-                        }
-                        10% { opacity: 1; }
-                        90% { opacity: 1; }
-                        100% {
-                            transform: translateY(-${window.innerHeight + 100}px) translateX(${drift}px) scale(0);
-                            opacity: 0;
-                        }
-                    }
-                `;
-                
-                particle.style.animation = `float-up-custom-${Math.random()} ${duration}s ease-in forwards`;
-                
-                if (Math.random() > 0.5) {
-                    particle.style.animation += `, drift ${Math.random() * 4 + 3}s ease-in-out infinite`;
-                }
-                
-                this.container.appendChild(particle);
-                this.particles.push({
-                    element: particle,
-                    created: Date.now(),
-                    duration: duration * 1000
+
+            const COUNT = window.innerWidth < 768 ? 90 : 180;
+            for (let i = 0; i < COUNT; i++) particles.push(makeParticle());
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                particles.forEach(p => {
+                    p.twinkle += p.twinkleSpeed;
+                    const tw = (Math.sin(p.twinkle) + 1) / 2;
+                    const a = p.alpha * (0.3 + 0.7 * tw);
+
+                    // glow halo
+                    const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
+                    grad.addColorStop(0, p.color + a + ')');
+                    grad.addColorStop(1, p.color + '0)');
+                    ctx.fillStyle = grad;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r * 6, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    // bright core
+                    ctx.fillStyle = p.color + Math.min(1, a + 0.3) + ')';
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
+                    if (p.x < -10) p.x = W + 10;
+                    if (p.x > W + 10) p.x = -10;
                 });
+                requestAnimationFrame(draw);
             }
-            
-            cleanup() {
-                const now = Date.now();
-                this.particles = this.particles.filter(p => {
-                    if (now - p.created > p.duration + 1000) {
-                        p.element.remove();
-                        return false;
-                    }
-                    return true;
-                });
-            }
-        }
-        
-        // Initialize particle system
-        new ParticleSystem();
-        
-        // Smooth scroll effect for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+            draw();
+        })();
+
+        // Stagger floating-emoji animations so each glyph drifts on its own rhythm
+        document.querySelectorAll('.float-emoji').forEach((el, i) => {
+            el.style.animationDelay = ((i % 9) * 0.35).toFixed(2) + 's';
         });
-        
-        // Add interactive glow effect to mouse movement
-        document.addEventListener('mousemove', (e) => {
-            const glow = document.createElement('div');
-            glow.style.position = 'fixed';
-            glow.style.left = e.clientX + 'px';
-            glow.style.top = e.clientY + 'px';
-            glow.style.width = '40px';
-            glow.style.height = '40px';
-            glow.style.borderRadius = '50%';
-            glow.style.background = 'radial-gradient(circle, rgba(255,215,0,0.3), transparent)';
-            glow.style.pointerEvents = 'none';
-            glow.style.zIndex = '999';
-            glow.style.animation = 'fade-out 1s forwards';
-            
-            document.body.appendChild(glow);
-            
-            setTimeout(() => glow.remove(), 1000);
+
+        // Graceful fallback: hide background images that fail to load
+        document.querySelectorAll('img.floater').forEach(img => {
+            img.addEventListener('error', () => { img.style.display = 'none'; });
         });
-        
-        // Add fade-out animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fade-out {
-                0% { opacity: 1; }
-                100% { opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
